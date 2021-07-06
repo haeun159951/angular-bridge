@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-
+import { Bridge } from './bridge';
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', //<App-Root>
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'bridge';
+  title = 'Angular bridge';
+  currentBridge: Bridge;
+
+  handleBridgeChange(bridge: Bridge) {
+    console.log('bridge change', bridge);
+    this.currentBridge = bridge;
+  }
 }
